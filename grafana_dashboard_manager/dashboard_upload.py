@@ -12,7 +12,7 @@ Upload dashboards from json files to a Grafana web instance
 import json
 import logging
 from pathlib import Path
-import importlib.metadata
+# import importlib.metadata
 
 import rich
 import typer
@@ -26,7 +26,7 @@ from .tree import walk_directory
 app = typer.Typer()
 logger = logging.getLogger()
 
-VERSION = importlib.metadata.version('grafana-dashboard-manager')
+# VERSION = importlib.metadata.version('grafana-dashboard-manager')
 
 
 @app.command()
@@ -87,7 +87,8 @@ def create_update_dashboard(dashboard_file: Path, folder_uid: str):
     """
 
     # Common options
-    request = {"overwrite": True, "message": f"Updated using grafana-dashboard-manager version {VERSION}"}
+    # request = {"overwrite": True, "message": f"Updated using grafana-dashboard-manager version {VERSION}"}
+    request = {"overwrite": True, "message": "Updated using grafana-dashboard-manager version"}
 
     # Catch the special General case where you put dashboards inside by not specifying any destination folder id or uid
     if folder_uid != "general":

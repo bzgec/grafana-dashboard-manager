@@ -1,0 +1,3 @@
+Example usage:
+
+    make SCRIPT_PARAM='--host "https://grafana.localhost" -u test -p test -f dashboard -e -c'
